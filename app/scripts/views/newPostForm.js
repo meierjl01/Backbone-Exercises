@@ -4,9 +4,9 @@ import $ from 'jquery';
 function renderNewPostForm(posts) {
   const element = $(`
         <form class="new-post">
-          <input type="text" name="title" placeholder="title">
+          <input type="text" name="title" placeholder="Blog Post Title">
           <textarea placeholder="Write your blog post here..."></textarea>
-          <input type="submit" name="name" value="save">
+          <input type="submit" name="name" value="Save">
         </form>
     `);
     element.on('submit', function(e) {
@@ -16,9 +16,9 @@ function renderNewPostForm(posts) {
       posts.create({title, body}, {
         success: (data) => {
           console.log('successful blog post creation', data);
-          //put a location hash change here once you have a home page built
         }
       });
+      location.hash = '';
     });
     return element;
 }

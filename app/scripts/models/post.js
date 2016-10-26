@@ -5,7 +5,7 @@ const postConfig = {
   defaults: {
     timestamp: new Date()
   },
-  urlRoot: 'http://tiny-za-server.herokuapp.com/collections/backbone_apps'
+  urlRoot: 'http://tiny-za-server.herokuapp.com/collections/jensblogposts'
 };
 
 const Post = Backbone.Model.extend(postConfig);

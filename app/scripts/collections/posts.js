@@ -3,5 +3,5 @@ import Post from '../models/post';
 
 export default Backbone.Collection.extend({
   model: Post,
-  url: 'http://tiny-za-server.herokuapp.com/collections/backbone_apps'
+  url: 'http://tiny-za-server.herokuapp.com/collections/jensblogposts'
 });
