@@ -1,6 +1,7 @@
 import Backbone from 'backbone';
 import $ from 'jquery';
 
+
 function renderNewPostForm(posts) {
   const element = $(`
         <form class="new-post">
