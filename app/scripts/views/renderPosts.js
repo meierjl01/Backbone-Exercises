@@ -1,29 +1,28 @@
-import Backbone from 'backbone';
+import backbone from 'backbone';
 import $ from 'jquery';
 
-
 function renderPosts(posts) {
-    const blogNav = $(`
-    <ul class="blogNav"></ul>
-  `);
-    $('.container').append(blogNav);
-    posts.fetch({
-        success: () => {
-            posts.forEach(function(post, i, arr) {
-                let li = $(`
-            <li class="${post.attributes._id}">${post.get('title')}
-            </li>
-            `);
-                blogNav.append(li);
-                $(`.${post.attributes._id}`).on('click', (e) => {
-                  window.location.hash = `posts/${post.attributes._id}`;
-                });
-            });
-        }
+  location.hash="posts";
 
-    });
-    return blogNav;
+  let blogPostList = $(`<ul></ul>`);
+  posts.fetch({
+    success: () => {
+      posts.forEach(function(post, i, arr) {
+        let onePost = $(`
+          <li class="${post.attributes._id}">
+          <h3>${post.attributes.title}</h2>
+          <p>${post.attributes.body}</p>
+          </li>
+          `);
+          blogPostList.append(onePost);
+
+          onePost.on('click', function(e) {
+            window.location.hash = `posts/${post.attributes._id}`;
+          });
+      });
+    }
+  });
+  return blogPostList;
 }
-
 
 export default renderPosts;
