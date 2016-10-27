@@ -1,0 +1,38 @@
+.nav-header {
+  float: right;
+  a {
+  text-decoration: none;
+  padding: .25em;
+  border: 1px solid black;
+  color: black;
+}
+}
+
+.sidebar {
+  float: left;
+  margin:3em;
+  li {
+    list-style-type: none;
+  }
+}
+
+.container {
+  display: inline-block;
+  margin: 6em;
+  input {
+    text-align: center;
+    font-size: 2em;
+    display: block;
+  }
+  textarea {
+    text-align: center;
+    font-size: 2em;
+    display: block;
+  }
+  li {
+    list-style-type: none;
+    padding: 3em;
+    margin: 1em;
+    border: 1px solid black;
+  }
+}

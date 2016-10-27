@@ -4,7 +4,7 @@ import $ from 'jquery';
 
 function renderPostsNav(posts) {
     const blogNav = $(`
-    <ul class="blogNav"></ul>
+    <ul class="blogNav">All Blog Posts</ul>
   `);
     $('.sidebar').append(blogNav);
     posts.fetch({
@@ -12,7 +12,7 @@ function renderPostsNav(posts) {
             posts.forEach(function(post, i, arr) {
                 let li = $(`
             <li class="${post.attributes._id}">
-            <h3>${post.attributes.title}</h3>
+            <h4>${post.attributes.title}</h4>
             </li>
             `);
                 blogNav.append(li);
